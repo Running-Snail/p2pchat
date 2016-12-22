@@ -2,6 +2,7 @@ import socket
 
 import p2p_msg
 import util
+import pprint
 
 
 class P2PChatServer(object):
@@ -38,6 +39,9 @@ class P2PChatServer(object):
                     data['device_id'], public_addr
                 )
                 self._send_client(addr, resp)
+    
+    def list(self):
+        pprint.pprint(self.clients)
     
     def close(self):
         if self._sock is not None:

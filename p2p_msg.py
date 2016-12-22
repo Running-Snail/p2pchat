@@ -31,3 +31,8 @@ def response_connect_msg(device_id, public_addr):
         'device_id': device_id,
         'public_addr': public_addr
     })
+
+def list_msg():
+    return _serialize({
+        'action': 'list'
+    })
